@@ -8,6 +8,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="stylesheet" href="build/tailwind.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 
   <title>BrightDent</title>
 
@@ -421,11 +423,74 @@
     <!-- cta -->
     <section
       class="relative bg-blue-teal-gradient px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-12 text-center md:text-left">
-      <div class="md:flex md:items-center md:justify-center">
-        <h2 class="text-xl font-bold text-white">hubungi kami Hari Ini! <br class="block md:hidden">Silahkan hubungi kami: +62 89522178635
-        </h2>
-        <a href="#"
-          class="px-8 py-4 bg-white text-blue-600 rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0">Janji Buku</a>
+      <div class="booking-section">
+        <div class="container">
+            <h2>Form Booking Klinik Gigi BrightDent </h2>
+            <form id="bookingForm">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+    
+                <label for="noTelp">No Telepon:</label>
+                <input type="tel" id="noTelp" name="noTelp" placeholder="Masukkan nomor telepon Anda" required>
+    
+                <label for="alamat">Alamat:</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat Anda" required>
+    
+                <label for="keluhan">Keluhan Sakit:</label>
+                <textarea id="keluhan" name="keluhan" rows="4" placeholder="Jelaskan keluhan Anda" required></textarea>
+    
+                <button type="submit">Kirim Booking</button>
+            </form>
+        </div>
+    </section>
+    
+    <style>
+        .booking-section {
+            background: linear-gradient(to right, white, white);
+            color: #ffffff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .booking-section .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            color: #333333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .booking-section h2 {
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        form textarea {
+            resize: none;
+        }
+        form button {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: white;
+        }
+    </style>
       </div>
     </section>
     <!-- end cta -->
