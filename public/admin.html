@@ -63,7 +63,7 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a href="#" class="brand-link">
-          <span class="brand-text font-weight-light">SILOKER-Backend</span>
+          <span class="brand-text font-weight-light">Dental-Backend</span>
         </a>
         <div class="sidebar">
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -75,7 +75,7 @@
               />
             </div>
             <div class="info">
-              <a href="#" class="d-block">Ahmad Admin</a>
+              <a href="#" class="d-block">Welcome Admin</a>
             </div>
           </div>
           <nav class="mt-2">
@@ -87,7 +87,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link" onclick="showContent('dokter')">
                   <i class="nav-icon fas fa-user-md"></i>
                   <p>Dokter</p>
                 </a>
@@ -164,6 +164,57 @@
           </div>
         </section>
       </div>
+      <div class="content-wrapper" id="content">
+        <!-- Halaman Dokter -->
+        <section id="dokter" class="content d-none">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="text-xl font-bold">Kelola Data Dokter</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Data Dokter</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-success">+ Tambah</button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-custom">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Dokter</th>
+                                    <th>Gender</th>
+                                    <th>Keahlian</th>
+                                    <th>Telepon</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Drg. Amelia</td>
+                                    <td>Perempuan</td>
+                                    <td>Spesialis Gigi Anak</td>
+                                    <td>0841231322</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm">Detail</button>
+                                        <button class="btn btn-warning btn-sm">Edit</button>
+                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
       <!-- ./wrapper -->
       <footer class="main-footer">
         <div class="float-right d-none d-sm-inline">
@@ -174,5 +225,19 @@
 
     <!-- AdminLTE App -->
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+    <script>
+      function showContent(sectionId) {
+          // Sembunyikan semua konten
+          document.querySelectorAll('.content section').forEach(section => {
+              section.classList.add('d-none');
+          });
+
+          // Tampilkan konten yang dipilih
+          const section = document.getElementById(sectionId);
+          if (section) {
+              section.classList.remove('d-none');
+          }
+      }
+  </script>
   </body>
 </html>
