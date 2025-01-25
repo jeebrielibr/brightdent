@@ -21,6 +21,7 @@
             <button type="submit" class="w-full bg-teal-500 text-white p-2 rounded-lg hover:bg-teal-600">Login</button>
         </form>
         <p class="mt-4 text-center text-sm text-gray-600">Belum punya akun? <a href="#" class="text-teal-500 hover:underline">Daftar</a></p>
+        <button onclick="goToHome()" class="w-full bg-gray-500 text-white p-2 rounded-lg hover:bg-gray-600 mt-4">Kembali ke Beranda</button>
     </div>
 
     <script>
@@ -44,6 +45,10 @@
                 alert('Email atau password salah!');
             }
         });
+
+        function goToHome() {
+            window.location.href = '../index.html';
+        }
     </script>
 </body>
 </html>
