@@ -78,7 +78,7 @@
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link" onclick="showContent('booking')">
                   <i class="nav-icon fas fa-calendar-alt"></i>
                   <p>Booking</p>
                 </a>
@@ -90,13 +90,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-box"></i>
-                  <p>Produk/Layanan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link" onclick="logout()">
                   <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>Logout</p>
                 </a>
@@ -107,7 +101,7 @@
       </aside>
 
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
+      <div class="content-wrapper" id="booking">
         <section class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -161,57 +155,59 @@
           </div>
         </section>
       </div>
-      <div class="content-wrapper" id="content">
-        <!-- Halaman Dokter -->
-        <section id="dokter" class="content d-none">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="text-xl font-bold">Kelola Data Dokter</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Data Dokter</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-success">+ Tambah</button>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-bordered table-custom">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Dokter</th>
-                                    <th>Gender</th>
-                                    <th>Keahlian</th>
-                                    <th>Telepon</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Drg. Zaidan</td>
-                                    <td>Perempuan</td>
-                                    <td>Spesialis Gigi Anak</td>
-                                    <td>0841231322</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm">Detail</button>
-                                        <button class="btn btn-warning btn-sm">Edit</button>
-                                        <button class="btn btn-danger btn-sm">Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <!-- Halaman Dokter -->
+      <div class="content-wrapper d-none" id="dokter">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="text-xl font-bold">Kelola Data Dokter</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Data Dokter</li>
+                </ol>
+              </div>
             </div>
+          </div>
         </section>
-    </div>
+        <section class="content">
+          <div class="card">
+            <div class="card-header">
+              <button class="btn btn-success">+ Tambah</button>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered table-custom">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Dokter</th>
+                    <th>Gender</th>
+                    <th>Keahlian</th>
+                    <th>Telepon</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Drg. Zaidan</td>
+                    <td>Perempuan</td>
+                    <td>Spesialis Gigi Anak</td>
+                    <td>0841231322</td>
+                    <td>
+                      <button class="btn btn-info btn-sm">Detail</button>
+                      <button class="btn btn-warning btn-sm">Edit</button>
+                      <button class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
       <!-- ./wrapper -->
       <footer class="main-footer">
         <div class="float-right d-none d-sm-inline">
@@ -224,17 +220,26 @@
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
     <script>
       function showContent(sectionId) {
-          // Sembunyikan semua konten
-          document.querySelectorAll('.content section').forEach(section => {
-              section.classList.add('d-none');
-          });
+        // Sembunyikan semua konten
+        document.querySelectorAll(".content-wrapper").forEach((wrapper) => {
+          wrapper.classList.add("d-none");
+        });
 
-          // Tampilkan konten yang dipilih
-          const section = document.getElementById(sectionId);
-          if (section) {
-              section.classList.remove('d-none');
-          }
+        // Tampilkan konten yang dipilih
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.classList.remove("d-none");
+        }
       }
-  </script>
+
+      // Tampilkan tabel Daftar Booking secara default
+      showContent("booking");
+
+      function logout() {
+    // Lakukan tindakan logout, seperti menghapus token atau sesi
+    // Misalnya, mengarahkan pengguna ke halaman login
+    window.location.href = 'login.html';
+  }
+    </script>
   </body>
 </html>
