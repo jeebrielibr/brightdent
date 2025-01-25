@@ -1,5 +1,5 @@
 const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./public/**/*.html'], ['./**/*.html'],
+  content: ['./public/**/*.html'], ['./**/*.html']: ['./src/**/*.vue'],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 })
 
