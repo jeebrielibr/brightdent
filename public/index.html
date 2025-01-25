@@ -78,15 +78,58 @@
       background: rgb(49, 130, 206);
       background: linear-gradient(90deg, rgba(49, 130, 206, 1) 0%, rgba(56, 178, 172, 1) 100%);
     }
-
+    
+    .booking-section {
+            background: linear-gradient(to right, white, white);
+            color: #ffffff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    .booking-section .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            color: #333333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    .booking-section h2 {
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        form textarea {
+            resize: none;
+        }
+        form button {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: white;
+        }
 
   </style>
 </head>
 
 <body class="antialiased bg-white font-sans text-gray-900">
-
   <main class="w-full">
-
     <!-- header -->
     <header class="absolute top-0 left-0 w-full z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64">
       <div class="hidden md:flex justify-between items-center border-b text-sm py-3"
@@ -227,7 +270,7 @@
       <div class="flex flex-col lg:flex-row lg:-mx-8">
         <div class="w-full lg:w-1/2 lg:px-8">
           <h2 class="text-5xl leading-tight font-bold mt-4 " id="Tentang">Tentang Kami</h2> <br>
-          <h2 class="text-3xl leading-tight font-bold mt-4">Selamat datang di Rumah Sakit Gigi Dr.Jibril</h2>
+          <h2 class="text-3xl leading-tight font-bold mt-4">Selamat datang di Rumah Sakit Gigi Gusi Cerah</h2>
           <p class="text-lg mt-4 font-semibold">Kualitas Terbaik dalam Pelayanan Gigi di Depok</p>
           <p class="mt-2 leading-relaxed">Bright Dent adalah klinik gigi yang berkomitmen untuk memberikan pelayanan gigi yang berkualitas tinggi dan memuaskan kebutuhan pasien kami. Kami memiliki tim dokter gigi yang berpengalaman dan staf yang ramah, serta menggunakan teknologi terbaru untuk memastikan pelayanan gigi yang terbaik."</p>
         </div>
@@ -443,56 +486,6 @@
             </form>
         </div>
     </section>
-    
-    <style>
-        .booking-section {
-            background: linear-gradient(to right, white, white);
-            color: #ffffff;
-            padding: 40px 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .booking-section .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            color: #333333;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .booking-section h2 {
-            margin-bottom: 20px;
-        }
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        form input, form textarea, form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        form textarea {
-            resize: none;
-        }
-        form button {
-            background-color: skyblue;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        form button:hover {
-            background-color: white;
-        }
-    </style>
-      </div>
-    </section>
     <!-- end form -->
 
     <!-- footer -->
@@ -604,7 +597,6 @@
                 </svg>
               </a>
             </li>
-
             <li class="ml-6">
               <a href="#" target="_blank" title="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
@@ -613,7 +605,6 @@
                 </svg>
               </a>
             </li>
-
             <li class="ml-6">
               <a href="#" target="_blank" title="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
@@ -622,7 +613,6 @@
                   <circle cx="11.994" cy="11.979" r="3.003" /></svg>
               </a>
             </li>
-
             <li class="ml-6">
               <a href="#" target="_blank" title="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
@@ -632,29 +622,13 @@
               </a>
             </li>
           </ul>
-
           <p class="text-sm text-gray-400 mt-12">© 2024 BrightDent. <br class="hidden lg:block">Semua hak di lindungi undang-undang.
           </p>
         </div>
       </div>
     </footer>
     <!-- end footer -->
-
   </main>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131505823-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-131505823-4');
-  </script>
-
 </body>
-
 </html>
